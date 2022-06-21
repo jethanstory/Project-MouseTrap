@@ -51,18 +51,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey("left shift") )//&& isGrounded)
         {
-            speed = 2f; //20
+            speed = 1.5f; //20
         }
         else
         {
-            speed = 1f; //12
+            speed = 0.5f; //12
         }
+        /*
         if (isGrounded && Input.GetButton("c"))
         {
             //float g = Input.GetAxis("Horizontal");
             //float h = Input.GetAxis("Vertical");
             transform.position = new Vector3(x,0.1413f,z);
         }
+        */
         velocity.y += gravity * Time.deltaTime;
         //velocity.y += gravity;
 
