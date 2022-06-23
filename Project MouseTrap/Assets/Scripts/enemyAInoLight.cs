@@ -19,19 +19,23 @@ public class enemyAInoLight : MonoBehaviour
 
     public bool isOn = false;
 
+    public bool canHide;
+
     //private Light enemyLight;
     // Start is called before the first frame update
     void Start()
     {
        myRenderer = GetComponent<Renderer>();
        theRigidBody = GetComponent<Rigidbody>();
+
+       canHide = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         fpsTargetDistance = Vector3.Distance(fpsTarget.position, transform.position);
-        if (fpsTargetDistance < enemyLookDistance) {
+        if (fpsTargetDistance < enemyLookDistance && canHide == false) {
             myRenderer.material.color = Color.yellow;
 
             GameObject.Find("farmerEnemy").GetComponent<AdvancedWanderAI>().enabled = false;
@@ -71,5 +75,7 @@ public class enemyAInoLight : MonoBehaviour
         //enemyLight.color = Color.red;
         //lightSource.SetActive(true);
     }
+
+    
 }
 
