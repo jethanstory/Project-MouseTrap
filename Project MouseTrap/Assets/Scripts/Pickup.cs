@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PickupRadio : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
 
     public GameObject myHands; //reference to your hands/the position where you want your object to go
@@ -10,6 +11,8 @@ public class PickupRadio : MonoBehaviour
     GameObject ObjectIwantToPickUp; // the gameobject onwhich you collided with
     bool hasItem; // a bool to see if you have an item in your hand
 
+    public float foodItems;
+    public Text foodScore;
 
     public GameObject radio;
 
@@ -36,10 +39,10 @@ public class PickupRadio : MonoBehaviour
 
                 //GameObject.Find("playerBody").GetComponent<ThrowingObject>().enabled = true;
 
-                ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = true;   //makes the rigidbody not be acted upon by forces
-                ObjectIwantToPickUp.transform.position = myHands.transform.position; // sets the position of the object to your hand position
-                ObjectIwantToPickUp.transform.rotation = myHands.transform.rotation; // sets the position of the object to your hand position
-                ObjectIwantToPickUp.transform.parent = myHands.transform; //makes the object become a child of the parent so that it moves with the hands
+                //ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = true;   //makes the rigidbody not be acted upon by forces
+                //ObjectIwantToPickUp.transform.position = myHands.transform.position; // sets the position of the object to your hand position
+                //ObjectIwantToPickUp.transform.rotation = myHands.transform.rotation; // sets the position of the object to your hand position
+                //ObjectIwantToPickUp.transform.parent = myHands.transform; //makes the object become a child of the parent so that it moves with the hands
                 
             //}
         }
@@ -53,10 +56,13 @@ public class PickupRadio : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // to see when the player enters the collider
     {
-        if(other.gameObject.tag == "PickUpRadio") //on the object you want to pick up set the tag to be anything, in this case "object"
+        if(other.gameObject.tag == "PickUp") //on the object you want to pick up set the tag to be anything, in this case "object"
         {
             canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
+            foodItems += 1;
+            foodScore.text = "Food Count: " + foodItems.ToString();
+            Destroy(other.gameObject);
         }
     }
     private void OnTriggerExit(Collider other)
