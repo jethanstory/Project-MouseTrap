@@ -12,7 +12,7 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.collider.name == "Enemy" || collisionInfo.collider.name == "WanderingEnemy" || collisionInfo.collider.name == "flyingEnemy" || collisionInfo.collider.name == "longOne" )
         {
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
             Debug.Log("HIT");
             
         }
