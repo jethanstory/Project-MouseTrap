@@ -34,19 +34,19 @@ public class enemyAInoLight : MonoBehaviour
         if (fpsTargetDistance < enemyLookDistance) {
             myRenderer.material.color = Color.yellow;
 
-            GameObject.Find("longOne").GetComponent<AdvancedWanderAI>().enabled = false;
-            GameObject.Find("longOne").GetComponent<FollowingEnemy>().enabled = true;
+            GameObject.Find("farmerEnemy").GetComponent<AdvancedWanderAI>().enabled = false;
+            GameObject.Find("farmerEnemy").GetComponent<FollowingEnemy>().enabled = true;
             lookAtPlayer();
             if (fpsTargetDistance < attackDistance) {
                 myRenderer.material.color = Color.red;
-                GameObject.Find("longOne").GetComponent<AttackPlayer>().enabled = true;
+                GameObject.Find("farmerEnemy").GetComponent<AttackPlayer>().enabled = true;
                 //attackPlease();
             }
         }
         
         else{
             myRenderer.material.color = Color.blue;
-            GameObject.Find("longOne").GetComponent<AdvancedWanderAI>().enabled = true;
+            GameObject.Find("farmerEnemy").GetComponent<AdvancedWanderAI>().enabled = true;
              gameObject.GetComponent<NavMeshAgent>().enabled = true;
             //enemyLight.color = Color.white;
         }
@@ -54,8 +54,15 @@ public class enemyAInoLight : MonoBehaviour
     }
 
     void lookAtPlayer() {
-        Quaternion rotation = Quaternion.LookRotation(fpsTarget.position - transform.position);
+        Vector3 dir = fpsTarget.position - transform.position;
+        dir.y = 0;//This allows the object to only rotate on its y axis
+        //dir.z = 0;
+        Quaternion rotation = Quaternion.LookRotation(dir);
         transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * damping);
+
+
+        //Quaternion rotation = Quaternion.LookRotation(fpsTarget.position - transform.position);
+        //transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * damping);
         
     }
 

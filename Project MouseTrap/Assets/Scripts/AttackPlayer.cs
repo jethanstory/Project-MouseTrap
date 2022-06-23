@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+[RequireComponent(typeof(NavMeshAgent))]
 
 public class AttackPlayer : MonoBehaviour
 {
     public float damping;
 
-    public UnityEngine.AI.NavMeshAgent agent;
-    public UnityEngine.AI.NavMeshAgent fpsTarget;
+    public NavMeshAgent agent;
+    public NavMeshAgent fpsTarget;
     public Transform player;
+
 
     // Start is called before the first frame update
 
@@ -46,7 +48,12 @@ public class AttackPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Quaternion rotation = Quaternion.LookRotation(player.position - transform.position);
+        Vector3 dir = player.position - transform.position;
+        dir.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(dir);
+
+
+        //Quaternion rotation = Quaternion.LookRotation(player.position - transform.position);
         transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * damping);
         //float distance = Vector3.Distance(player.transform.position,transform.position);
         //if (agent != null && agent.remainingDistance <= agent.stoppingDistance)
@@ -54,7 +61,8 @@ public class AttackPlayer : MonoBehaviour
             
             //agent.SetDestination(RandomNavMeshLocation());
         //}
-        transform.LookAt(player);
+        
+        //transform.LookAt(player);
         agent.SetDestination(player.position);
         
 
