@@ -9,7 +9,7 @@ public class GameOEvents : MonoBehaviour
     // Start is called before the first frame update
     public void ReplayGame()
     {
-        SceneManager.LoadScene("House_M"); //SceneManager.LoadScene("Forest");
+        SceneManager.LoadScene("House_M"); //SceneManager.LoadScene("Forest"); //House_M
     }
 
     // Update is called once per frame
