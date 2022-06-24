@@ -22,7 +22,7 @@ public class AttackPlayer : MonoBehaviour
     [Range(0, 500)] public float acceleration; //100
     void Start()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
 
         if (agent != null)
         {
@@ -61,7 +61,7 @@ public class AttackPlayer : MonoBehaviour
             
             //agent.SetDestination(RandomNavMeshLocation());
         //}
-        
+
         //transform.LookAt(player);
         agent.SetDestination(player.position);
         
