@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
 
     bool canIClimb;
 
+    public float sprintTime = 3000; //1000 //300 //7000 //3000 
+
+    bool canSprint;
+
 
     Vector3 velocity;
     bool isGrounded;
@@ -49,13 +53,22 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //-4
         }
 
-        if (Input.GetKey("left shift") )//&& isGrounded)
+        if (Input.GetKey("left shift") && canSprint == true)//sprintTime >= 2) //== 3000) //>= 2) //&& isGrounded)
         {
             speed = 1.5f; //20
+            sprintTime += -20;
+            if (sprintTime < 0)
+                canSprint = false;
+
         }
         else
         {
             speed = 0.5f; //12
+
+            if (sprintTime < 3000)
+                sprintTime += 20; //1
+           else if (sprintTime == 3000)
+                canSprint = true;
         }
         /*
         if (isGrounded && Input.GetButton("c"))
