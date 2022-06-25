@@ -15,6 +15,8 @@ public class FollowingEnemy : MonoBehaviour
     public NavMeshAgent fpsTarget;
     public Transform player;
 
+    Animator animator;
+
     // Start is called before the first frame update
 
     [Range(0, 100)] public float speed;
@@ -27,6 +29,10 @@ public class FollowingEnemy : MonoBehaviour
         {
             agent.speed = speed;
             agent.SetDestination(player.position);
+
+            animator = GetComponent<Animator>();
+
+            animator.SetBool("isWalking", true);
 
         }
     }

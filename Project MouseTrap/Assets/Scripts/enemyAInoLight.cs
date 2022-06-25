@@ -36,21 +36,21 @@ public class enemyAInoLight : MonoBehaviour
     {
         fpsTargetDistance = Vector3.Distance(fpsTarget.position, transform.position);
         if (fpsTargetDistance < enemyLookDistance && canHide == false) {
-            myRenderer.material.color = Color.yellow;
+            //myRenderer.material.color = Color.yellow;
 
-            GameObject.Find("farmerEnemy").GetComponent<AdvancedWanderAI>().enabled = false;
-            GameObject.Find("farmerEnemy").GetComponent<FollowingEnemy>().enabled = true;
+            GameObject.Find("Warrior").GetComponent<AdvancedWanderAI>().enabled = false;
+            GameObject.Find("Warrior").GetComponent<FollowingEnemy>().enabled = true;
             lookAtPlayer();
             if (fpsTargetDistance < attackDistance) {
-                myRenderer.material.color = Color.red;
-                GameObject.Find("farmerEnemy").GetComponent<AttackPlayer>().enabled = true;
+                //myRenderer.material.color = Color.red;
+                GameObject.Find("Warrior").GetComponent<AttackPlayer>().enabled = true;
                 //attackPlease();
             }
         }
         
         else{
-            myRenderer.material.color = Color.blue;
-            GameObject.Find("farmerEnemy").GetComponent<AdvancedWanderAI>().enabled = true;
+            //myRenderer.material.color = Color.blue;
+            GameObject.Find("Warrior").GetComponent<AdvancedWanderAI>().enabled = true;
              gameObject.GetComponent<NavMeshAgent>().enabled = true;
             //enemyLight.color = Color.white;
         }

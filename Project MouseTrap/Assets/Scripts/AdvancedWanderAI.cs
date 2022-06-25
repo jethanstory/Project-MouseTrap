@@ -14,6 +14,8 @@ public class AdvancedWanderAI : MonoBehaviour
     public NavMeshAgent fpsTarget;
     // Start is called before the first frame update
 
+    Animator animator;
+
     [Range(0, 500)] public float speed; //100
     [Range(1, 500)] public float walkRadius;
     void Start()
@@ -24,6 +26,11 @@ public class AdvancedWanderAI : MonoBehaviour
         {
             agent.speed = speed;
             agent.SetDestination(RandomNavMeshLocation());
+
+
+            animator = GetComponent<Animator>();
+
+            animator.SetBool("isWalking", true);
         }
     }
 

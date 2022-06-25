@@ -14,6 +14,8 @@ public class AttackPlayer : MonoBehaviour
     public NavMeshAgent fpsTarget;
     public Transform player;
 
+    Animator animator;
+
 
     // Start is called before the first frame update
 
@@ -29,6 +31,10 @@ public class AttackPlayer : MonoBehaviour
             agent.speed = speed;
             agent.acceleration = acceleration;
             agent.SetDestination(player.position);
+
+            animator = GetComponent<Animator>();
+
+            animator.SetBool("isRunning", true);
         }
     }
 

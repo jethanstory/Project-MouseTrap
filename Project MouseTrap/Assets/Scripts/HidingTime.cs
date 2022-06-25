@@ -7,14 +7,14 @@ using UnityEngine.SceneManagement;
  
 public class HidingTime : MonoBehaviour
 {
-    public GameObject myHands; //reference to your hands/the position where you want your object to go
+    //public GameObject myHands; //reference to your hands/the position where you want your object to go
     bool canpickup; //a bool to see if you can or cant pick up the item
     GameObject ObjectIwantToPickUp; // the gameobject onwhich you collided with
     bool hasItem; // a bool to see if you have an item in your hand
 
     public bool canHide;
 
-    public GameObject flare;
+    //public GameObject flare;
 
 
     //public Collider sphereColl;
@@ -42,9 +42,9 @@ public class HidingTime : MonoBehaviour
                 //canHide = false;
                 //Destroy(flare);
 
-                GameObject.Find("farmerEnemy").GetComponent<enemyAInoLight>().enabled = false;
-                GameObject.Find("farmerEnemy").GetComponent<AttackPlayer>().enabled = false;
-                GameObject.Find("farmerEnemy").GetComponent<FollowingEnemy>().enabled = false;
+                GameObject.Find("Warrior").GetComponent<enemyAInoLight>().enabled = false;
+                GameObject.Find("Warrior").GetComponent<AttackPlayer>().enabled = false;
+                GameObject.Find("Warrior").GetComponent<FollowingEnemy>().enabled = false;
 
                 //ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = true;   //makes the rigidbody not be acted upon by forces
                 //ObjectIwantToPickUp.transform.position = myHands.transform.position; // sets the position of the object to your hand position
@@ -55,7 +55,7 @@ public class HidingTime : MonoBehaviour
         }
         else
         {
-            GameObject.Find("farmerEnemy").GetComponent<enemyAInoLight>().enabled = true;
+            GameObject.Find("Warrior").GetComponent<enemyAInoLight>().enabled = true;
         }
         //if (Input.GetKeyDown("q") && hasItem == true) // if you have an item and get the key to remove the object, again can be any key
        // {
