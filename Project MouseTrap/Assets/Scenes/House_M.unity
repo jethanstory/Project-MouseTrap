@@ -5754,6 +5754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 100056, guid: 9b921426277dad9488dccdf1e2d1183d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9b921426277dad9488dccdf1e2d1183d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7280,7 +7284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2012698918}
   fpsTarget: {fileID: 0}
-  speed: 1
+  speed: 1.5
   walkRadius: 10
 --- !u!54 &2012698917
 Rigidbody:
