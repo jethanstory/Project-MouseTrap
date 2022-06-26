@@ -99,5 +99,7 @@ public class WanderingEnemyAI : MonoBehaviour
         //Quaternion rotation = Quaternion.LookRotation(fpsTarget.position - transform.position);
         transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * damping);
     }
+
+    
 }
 

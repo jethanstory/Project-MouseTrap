@@ -16,15 +16,18 @@ public class AdvancedWanderAI : MonoBehaviour
 
     Animator animator;
 
-    [Range(0, 500)] public float speed; //100
+    //[Range(0, 500)] public float speed; //100
     [Range(1, 500)] public float walkRadius;
+    //[Range(0, 500)] public float acceleration; //100
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
 
         if (agent != null)
         {
-            agent.speed = speed;
+            //agent.speed = speed;
+            agent.speed = 1.5f;
+            //agent.acceleration = acceleration;
             agent.SetDestination(RandomNavMeshLocation());
 
 
@@ -51,6 +54,7 @@ public class AdvancedWanderAI : MonoBehaviour
         if (agent != null && agent.remainingDistance <= agent.stoppingDistance)
         {
             agent.SetDestination(RandomNavMeshLocation());
+            //acceleration = 0f;
         }
         
         //agent.SetDestination(fpsTarget)

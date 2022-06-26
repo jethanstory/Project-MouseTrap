@@ -3,25 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
  
 public class HidingTime : MonoBehaviour
 {
     //public GameObject myHands; //reference to your hands/the position where you want your object to go
-    bool canpickup; //a bool to see if you can or cant pick up the item
+    //bool canpickup; //a bool to see if you can or cant pick up the item
     GameObject ObjectIwantToPickUp; // the gameobject onwhich you collided with
-    bool hasItem; // a bool to see if you have an item in your hand
+    //bool hasItem; // a bool to see if you have an item in your hand
+
+    //public NavMeshAgent agent;
 
     public bool canHide;
 
     //public GameObject flare;
 
-
+    //[Range(0, 100)] public float speed;
     //public Collider sphereColl;
     // Start is called before the first frame update
     void Start()
     {
+
+        //agent = GetComponent<NavMeshAgent>();
         canHide = false;
+        //agent.speed = speed;
 
         //sphereColl = GetComponent<Collider>();
     }
@@ -45,6 +51,10 @@ public class HidingTime : MonoBehaviour
                 GameObject.Find("Warrior").GetComponent<enemyAInoLight>().enabled = false;
                 GameObject.Find("Warrior").GetComponent<AttackPlayer>().enabled = false;
                 GameObject.Find("Warrior").GetComponent<FollowingEnemy>().enabled = false;
+                GameObject.Find("Warrior").GetComponent<AdvancedWanderAI>().enabled = true;
+
+                //speed = 1.5f;
+
 
                 //ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = true;   //makes the rigidbody not be acted upon by forces
                 //ObjectIwantToPickUp.transform.position = myHands.transform.position; // sets the position of the object to your hand position
@@ -56,6 +66,7 @@ public class HidingTime : MonoBehaviour
         else
         {
             GameObject.Find("Warrior").GetComponent<enemyAInoLight>().enabled = true;
+            //speed = 1.5f;
         }
         //if (Input.GetKeyDown("q") && hasItem == true) // if you have an item and get the key to remove the object, again can be any key
        // {

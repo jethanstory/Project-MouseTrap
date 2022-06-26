@@ -451,9 +451,10 @@ GameObject:
   - component: {fileID: 194330714}
   - component: {fileID: 194330720}
   - component: {fileID: 194330721}
+  - component: {fileID: 194330722}
   m_Layer: 0
   m_Name: First Person Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,12 +587,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194330713}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ab23e1d7de5c5f4581405e883ec7b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canHide: 0
+--- !u!114 &194330722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194330713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e8dc42cffd074f9e0e885d1f0a9c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerFlip: 0
 --- !u!1001 &211032212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5402,7 +5416,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1475368912}
   fpsTarget: {fileID: 0}
-  speed: 0.5
   walkRadius: 100
 --- !u!114 &1475368911
 MonoBehaviour:
@@ -5461,9 +5474,11 @@ MonoBehaviour:
   attackDistance: 1
   enemyMovementSpeed: 100
   damping: 50
+  agent: {fileID: 0}
   fpsTarget: {fileID: 194330719}
+  playa: {fileID: 0}
+  hasCol: 0
   isOn: 0
-  canHide: 0
 --- !u!54 &1475368914
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6093,7 +6108,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1598604232}
   fpsTarget: {fileID: 0}
-  speed: 1
   walkRadius: 100
 --- !u!114 &1598604228
 MonoBehaviour:
@@ -6112,9 +6126,11 @@ MonoBehaviour:
   attackDistance: 1
   enemyMovementSpeed: 100
   damping: 50
+  agent: {fileID: 0}
   fpsTarget: {fileID: 194330719}
+  playa: {fileID: 0}
+  hasCol: 0
   isOn: 0
-  canHide: 0
 --- !u!114 &1598604229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7230,9 +7246,11 @@ MonoBehaviour:
   attackDistance: 1
   enemyMovementSpeed: 100
   damping: 5
+  agent: {fileID: 2012698918}
   fpsTarget: {fileID: 194330719}
+  playa: {fileID: 194330713}
+  hasCol: 0
   isOn: 0
-  canHide: 0
 --- !u!114 &2012698914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7284,7 +7302,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2012698918}
   fpsTarget: {fileID: 0}
-  speed: 1.5
   walkRadius: 10
 --- !u!54 &2012698917
 Rigidbody:
