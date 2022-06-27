@@ -14,7 +14,9 @@ public class Pickup : MonoBehaviour
     public float foodItems;
     public Text foodScore;
 
-    public GameObject radio;
+    public float secondsCount;
+
+    public GameObject text;
 
 
     // Start is called before the first frame update
@@ -22,13 +24,21 @@ public class Pickup : MonoBehaviour
     {
         canpickup = false;    //setting both to false
         hasItem = false;
+        secondsCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(canpickup == true) // if you enter thecollider of the objecct
+
+        secondsCount += Time.deltaTime;
+
+        if (secondsCount > 5) 
         {
+            text.SetActive(false);
+        }
+        //if(canpickup == true) // if you enter thecollider of the objecct
+        //{
             //Debug.Log("HIT");
 
 
@@ -45,7 +55,7 @@ public class Pickup : MonoBehaviour
                 //ObjectIwantToPickUp.transform.parent = myHands.transform; //makes the object become a child of the parent so that it moves with the hands
                 
             //}
-        }
+        //}
         //if (Input.GetKeyDown("q") && hasItem == true) // if you have an item and get the key to remove the object, again can be any key
        // {
            // ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = false; // make the rigidbody work again
