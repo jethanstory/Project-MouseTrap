@@ -31,6 +31,8 @@ public class enemyAInoLight : MonoBehaviour
 
     public bool isOn = false;
 
+    Animator animator;
+
     //public bool canHide;
 
     //private Light enemyLight;
@@ -42,6 +44,12 @@ public class enemyAInoLight : MonoBehaviour
 
        //canHide = false;
        hasCol = true;
+
+       animator = GetComponent<Animator>();
+
+    
+
+       
 
        playa = GameObject.FindWithTag("Player");
     }
@@ -67,8 +75,11 @@ public class enemyAInoLight : MonoBehaviour
         else{
             //myRenderer.material.color = Color.blue;
 
-            //needed this to reset speed to 1.5 if player escapes the enemy under desk while in pursuit
+            //needed this to reset speed to 1.5 and walking animation if player escapes the enemy under desk while in pursuit
             agent.speed = 1.5f;
+            //animator.SetBool("isWalking", true);
+            //animator.SetBool("isRunning", false);
+            
             GameObject.Find("Warrior").GetComponent<AdvancedWanderAI>().enabled = true;
             GameObject.Find("Warrior").GetComponent<FollowingEnemy>().enabled = false;
             GameObject.Find("Warrior").GetComponent<AttackPlayer>().enabled = false;

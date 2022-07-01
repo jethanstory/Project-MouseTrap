@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Pickup : MonoBehaviour
 {
@@ -14,9 +15,13 @@ public class Pickup : MonoBehaviour
     public float foodItems;
     public Text foodScore;
 
+    //public Text notEnough;
+
     public float secondsCount;
 
     public GameObject text;
+
+    public GameObject errorText;
 
 
     // Start is called before the first frame update
@@ -25,6 +30,7 @@ public class Pickup : MonoBehaviour
         canpickup = false;    //setting both to false
         hasItem = false;
         secondsCount = 0;
+        errorText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -74,9 +80,20 @@ public class Pickup : MonoBehaviour
             foodScore.text = "Food Count: " + foodItems.ToString();
             Destroy(other.gameObject);
         }
+        else if(other.gameObject.tag == "EndGame" && foodItems >= 20)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene(3);
+        }
+        else if(other.gameObject.tag == "EndGame" && foodItems <= 20)
+        {
+            //notEnough.text = "";
+            errorText.SetActive(true);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
+        errorText.SetActive(false);
         canpickup = false; //when you leave the collider set the canpickup bool to false
      
     }
