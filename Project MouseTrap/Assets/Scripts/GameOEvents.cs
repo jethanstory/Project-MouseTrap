@@ -22,4 +22,12 @@ public class GameOEvents : MonoBehaviour
     {
         SceneManager.LoadScene("House_M"); //SceneManager.LoadScene("Forest");
     }
+    public void MenuScene() 
+    {
+        SceneManager.LoadScene("MainMenu"); //SceneManager.LoadScene("Forest");
+    }
+    public void CreditsScene() 
+    {
+        SceneManager.LoadScene("CreditsScene"); //SceneManager.LoadScene("Forest");
+    }
 }
