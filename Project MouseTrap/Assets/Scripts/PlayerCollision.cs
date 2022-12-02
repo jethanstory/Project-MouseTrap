@@ -12,6 +12,7 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.collider.name == "Enemy" || collisionInfo.collider.name == "WanderingEnemy" || collisionInfo.collider.name == "flyingEnemy" || collisionInfo.collider.name == "longOne" ||  collisionInfo.collider.name == "Warrior")
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             SceneManager.LoadScene(1);
             Debug.Log("HIT");
             

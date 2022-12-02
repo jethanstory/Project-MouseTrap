@@ -83,6 +83,7 @@ public class Pickup : MonoBehaviour
         else if(other.gameObject.tag == "EndGame" && foodItems >= 20)
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             SceneManager.LoadScene(3);
         }
         else if(other.gameObject.tag == "EndGame" && foodItems <= 20)
