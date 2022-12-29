@@ -20,6 +20,7 @@ public class Pickup : MonoBehaviour
     public float secondsCount;
 
     public GameObject text;
+    public GameObject textControls;
     public GameObject foodPickup;
 
     public GameObject errorText;
@@ -44,7 +45,13 @@ public class Pickup : MonoBehaviour
         if (secondsCount > 5) 
         {
             text.SetActive(false);
+            textControls.SetActive(true);
+            if (secondsCount > 10)
+            {
+                textControls.SetActive(false);
+            }
         }
+
         //if(canpickup == true) // if you enter thecollider of the objecct
         //{
             //Debug.Log("HIT");
