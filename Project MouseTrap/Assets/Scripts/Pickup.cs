@@ -20,6 +20,7 @@ public class Pickup : MonoBehaviour
     public float secondsCount;
 
     public GameObject text;
+    public GameObject foodPickup;
 
     public GameObject errorText;
 
@@ -31,6 +32,7 @@ public class Pickup : MonoBehaviour
         hasItem = false;
         secondsCount = 0;
         errorText.SetActive(false);
+        foodPickup.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,6 +79,8 @@ public class Pickup : MonoBehaviour
             canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
             foodItems += 1;
+            foodPickup.SetActive(false);
+            foodPickup.SetActive(true);
             foodScore.text = "Food Count: " + foodItems.ToString();
             Destroy(other.gameObject);
         }
