@@ -51,7 +51,12 @@ public class HidingTime : MonoBehaviour
                 GameObject.Find("Warrior").GetComponent<enemyAInoLight>().enabled = false;
                 GameObject.Find("Warrior").GetComponent<AttackPlayer>().enabled = false;
                 GameObject.Find("Warrior").GetComponent<FollowingEnemy>().enabled = false;
+                GameObject.Find("Cat_Lite").GetComponent<WanderingEnemyAI>().enabled = false;
+                GameObject.Find("Cat_Lite").GetComponent<AttackPlayer>().enabled = false;
+                GameObject.Find("Cat_Lite").GetComponent<FollowingEnemy>().enabled = false;
+
                 GameObject.Find("Warrior").GetComponent<AdvancedWanderAI>().enabled = true;
+                GameObject.Find("Cat_Lite").GetComponent<CatWanderAI>().enabled = true;
 
                 //speed = 1.5f;
 
@@ -66,6 +71,7 @@ public class HidingTime : MonoBehaviour
         else
         {
             GameObject.Find("Warrior").GetComponent<enemyAInoLight>().enabled = true;
+            GameObject.Find("Cat_Lite").GetComponent<WanderingEnemyAI>().enabled = true;
             //speed = 1.5f;
         }
         //if (Input.GetKeyDown("q") && hasItem == true) // if you have an item and get the key to remove the object, again can be any key
