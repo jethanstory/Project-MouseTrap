@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
+    
     bool canIClimb;
 
     public float sprintTime = 3000; //1000 //300 //7000 //3000 

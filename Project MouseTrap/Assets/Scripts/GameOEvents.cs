@@ -20,7 +20,7 @@ public class GameOEvents : MonoBehaviour
 
     public void StartGame() 
     {
-        SceneManager.LoadScene("House_M"); //SceneManager.LoadScene("Forest");
+        SceneManager.LoadScene("LoadingScene"); //SceneManager.LoadScene("Forest");
     }
     public void MenuScene() 
     {
