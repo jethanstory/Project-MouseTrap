@@ -114,6 +114,7 @@ public class WanderingEnemyAI : MonoBehaviour
         transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * damping);
     }
 
+    //Checks to see if player has entered a hiding space
     void checkColli() {
         if (playa.GetComponent<EnteredTrigger>().triggerFlip) {
             hasCol = true;
