@@ -679,7 +679,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 967567281}
         m_TargetAssemblyTypeName: GameOEvents, Assembly-CSharp
-        m_MethodName: CreditsScene
+        m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
