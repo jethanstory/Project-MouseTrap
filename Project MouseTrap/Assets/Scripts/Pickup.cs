@@ -97,7 +97,8 @@ public class Pickup : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             //SceneManager.LoadScene(3);
-            Time.timeScale = 0;
+            SceneManager.LoadScene("CreditsScene");
+            //Time.timeScale = 0;
             winCanvas.SetActive(true);
         }
         else if(other.gameObject.tag == "EndGame" && foodItems <= 20)
