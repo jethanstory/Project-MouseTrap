@@ -51,7 +51,8 @@ public class AdvancedWanderAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //agent.speed = 1.5f;
+        //animator.SetBool("isWalking", true);
+        agent.speed = 1.5f;
         if (agent != null && agent.remainingDistance <= agent.stoppingDistance)
         {
             agent.SetDestination(RandomNavMeshLocation());

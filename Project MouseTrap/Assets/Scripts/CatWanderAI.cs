@@ -49,7 +49,8 @@ public class CatWanderAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //agent.speed = 0.2f;
+        //animator.SetBool("isWalking", true);
+        agent.speed = 0.2f;
         if (agent != null && agent.remainingDistance <= agent.stoppingDistance)
         {
             agent.SetDestination(RandomNavMeshLocation());

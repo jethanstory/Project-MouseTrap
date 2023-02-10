@@ -53,7 +53,7 @@ public class FollowingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //agent.speed = speed;
+        agent.speed = speed;
         Vector3 dir = player.position - transform.position;
         dir.y = 0;
         Quaternion rotation = Quaternion.LookRotation(dir);
