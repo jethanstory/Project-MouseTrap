@@ -30,4 +30,8 @@ public class GameOEvents : MonoBehaviour
     {
         SceneManager.LoadScene("CreditsScene"); //SceneManager.LoadScene("Forest");
     }
+    public void LoadNextScene() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //SceneManager.LoadScene("Forest");
+    }
 }

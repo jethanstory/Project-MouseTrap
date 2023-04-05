@@ -24,6 +24,7 @@ public class Pickup : MonoBehaviour
     public GameObject foodPickup;
 
     public GameObject errorText;
+    public GameObject winCanvas;
 
 
     // Start is called before the first frame update
@@ -95,7 +96,10 @@ public class Pickup : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            SceneManager.LoadScene(3);
+            //SceneManager.LoadScene(3);
+            //SceneManager.LoadScene("CreditsScene");
+            Time.timeScale = 0;
+            winCanvas.SetActive(true);
         }
         else if(other.gameObject.tag == "EndGame" && foodItems <= 20)
         {

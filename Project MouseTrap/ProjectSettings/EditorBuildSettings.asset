@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/House_M.unity
     guid: db9c4dc83bc986e439145cc36d3838e7
   - enabled: 1
+    path: Assets/Scenes/House_2 Files/House_2.unity
+    guid: b33b2817999804b4298669808830d7ab
+  - enabled: 1
     path: Assets/Scenes/LevelChange.unity
     guid: 3bf4eed64f0dacb4d8ca8c4a238ce4f3
   - enabled: 1
